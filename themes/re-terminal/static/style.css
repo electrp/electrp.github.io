@@ -1,0 +1,37 @@
+:root {
+    --mainColor: #ffE0f5;
+    --bgColor: #40343e;
+    --bgAccent: #726972;
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--mainColor);
+}
+
+.logo {
+    background: var(--bgAccent);
+    color: var(--mainColor);
+}
+
+.header__logo:after {
+    background: 
+        repeating-linear-gradient(90deg, var(--bgAccent), var(--bgAccent) 2px, transparent 0, transparent 10px)
+}
+
+.post-title:after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    display: block;
+    width: 100%;
+    border-bottom: 3px dotted var(--bgAccent);
+}
+
+.post-title {
+    position: relative;
+    color: var(--bgAccent);
+    margin: 0 0 15px;
+    padding-bottom: 15px;
+    border-bottom: 3px dotted var(--bgAccent);
+}

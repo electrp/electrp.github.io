@@ -1,15 +1,12 @@
 +++
 title = "Nitelite Archetypes"
-date = "2024-12-15"
+date = "2024-12-16"
 hideComments=true
 +++ 
 
-(not finished, sorry! come back later)
-## One of, if not the most important peice of an ECS is it's data storage.
-
 ECS is defined in two ways:
-- ECS as a programming pattern, with it's core philosophy of "Composition over Inehritance.
-- ECS as a data access pattern, where objects are stored in a way optimized for computers to proccess.
+- ECS as a programming pattern, with it's core philosophy of "Composition over inheritance.
+- ECS as a data access pattern, where objects are stored in a more efficient layout.
 
 Both definitions are incredibly important to why ECS is trendy. The programming pattern promotes decoupling and modularity, while the data pattern provides great performance over object-driven approaches. This post will specifically highlight the data access pattern part of ECS.
 
@@ -43,7 +40,7 @@ In NiteLite, tables are lightweight objects that store components, and by defaul
 
 Along with rows and columns, the table contains metadata about the number of entities contained and the index of the first free entity, for faster insertion. First entity free could have been a free-list, but tables are generally small.
 
-The table itself contains a predefined number of rows, which correspond to entities. Each column refers to a unique component, as well as an extra column that stores an Entity reference object. Visually, the storage functions almost identically to an SQL table. The reason for the extra entity column will be explained next.
+The table itself contains a predefined number of rows, which correspond to entities. Each column refers to a unique component, as well as an extra column that stores an Entity reference object. Visually, the storage functions almost identically to an SQL table. The reason for the extra entity column will be explained later.
 
 | Table | Entity | Position    | Rotation   | Health |
 | ----- | ------ | ----------- | ---------- | ------ |
@@ -51,6 +48,8 @@ The table itself contains a predefined number of rows, which correspond to entit
 | 1     | e15g2  | (-1, 1, 1)  | (0, 0, 0)  | 50     |
 | 2     | e15g1  | (1, 1, 1)   | (0, -1, 0) | 2      |
 | 3     | NULL   | (100, 1, 0) | (1, 1, 1)  | 0      |
+Tables tend to be allocated in bulk, to reduce allocations and improve iteration performance between tables.
+
 ### Entity Provider
 
 There are two different entity types provided by this implementation, the default Entity reference object, and a Archetype Entity object. Generally, the Entity object is used to obtain the Archetype Entity object.
@@ -60,12 +59,68 @@ An Archetype Entity is a non-stable reference to an entity, meaning that many op
 ```cpp
 struct ArchetypeEntity
 {
-	uint16_t archetype_index; // An index to access a specific archetype
-	uint16_t table_index; // The table the entity is contained within
-	uint16_t entity_index; // The index within the table
+	uint16_t archetype_index; // 1st: An index to access a specific archetype
+	uint16_t table_index; // 2nd: The table the entity is contained within
+	uint16_t entity_index; // 3rd: The index within the table
 }
 ```
 
-If you 
+The Entity reference object is a type similar to the Archetype Entity, but provides a stable reference to entities without the worry of it changing. There are many ways to implement this, but a simple way is using generational indices:
 
-### Queries / Iteration
+```cpp
+struct Entity
+{
+	uint32_t entity_index; // Index into an array
+	uint32_t generation; // n'th value stored at that index
+}
+
+struct EntityData
+{
+	ArchetypeEntity entity; // Entity -> Archetype Entity -> Components
+	uint32_t current_generation; // Compare to see if referred entity is alive
+}
+
+std::vector<EntityData> data;
+```
+
+This generational index pattern is also known as a [Slotmap](https://docs.rs/slotmap/latest/slotmap/), and can be implemented very simply with the use of an existing slotmap implementation.  When entities are removed/added/modified, the archetype index may be changed to reflect the difference.
+
+Entity -> Archetype Entity -> Archetype -> Table -> Components
+
+Unfortunately, Archetyped ECS implementations tend to require more steps to get access to entities from their Entity objects, as their indices are more complex and layered.  
+### Queries / Component Iteration
+
+Queries exist to have a way to access components quicker iteratively. Since all archetypes store their components in arrays, iterating through components only requires incrementing pointers for each table stored. The interface is as follows:
+
+```cpp
+...
+std::vector<Entity> dead_entities;
+for(EntityInterface inter : ece->Query<Position, Opt<Rotation>, const Health>())
+{
+	inter.get<Position>() += vec3(1, 0, 0); // Component access
+
+	if(inter.has<Rotation>()) // Check for component
+		inter,get<Rotation>() = vec3(0, 0, 1);
+
+	if(inter.get<Health>() == 0)  
+		dead_entities.push_back(inter,entity()); // Get entity index
+
+}
+```
+
+- `EntityInterface` is provided for each entity that matches the query,  
+- The `Get<Component>()` function returns a reference to the component, either mutably or constant.
+- By asking for a component wrapped in `Opt<Component>`, it will return both entites that do have this Component and don't have this component. You can test for it with the `Has<Component>()` function.
+- Requesting components with const adds the requirement that the component cannot be modified.
+- The `Entity()` function returns the constant Entity reference created by the entity provider. This is why it is stored in the table as it's own column, to ensure queries can store references to other entities.
+
+Internally, the Queries loop in this order:
+- Starting with the archetype that matches this query, creating one if it doesn't exist, loop through all children.
+- Loop through every table allocation.
+- Loop through each table.
+- Depending on table state:
+	- If table is empty, skip.
+	- If table has entities, iterate and check each one.
+	- If table is full, iterate through all components.
+
+This process ensures that all entities that match the query are processed. While other ECS implementations feature more specific and complex query features, this subset is enough to allow for most complex behavior to be modeled.

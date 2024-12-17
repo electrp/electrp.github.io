@@ -1,6 +1,6 @@
 +++
 title = "Nitelite ECS"
-date = "2024-12-15"
+date = "2024-12-16"
 hideComments=true
 +++
 
@@ -38,7 +38,4 @@ Travis was commonly in charge of making the interface usable for the rest of the
 - Stable entity refrences (Entity Object/Slotmap)
 - Data storage for components (See [Archetypes](nitelite-archetypes))
 - Entity parenting (not yet merged due to conflicts with jolt and rendering)
-
-# Archetypes!
-(the whole reason I'm writing this at all...)
 

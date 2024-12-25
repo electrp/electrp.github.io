@@ -14,7 +14,7 @@ pagination.pagerSize = 5
   themeColor = "pink"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 4
 
   # show selector to switch language
   showLanguageSelector = false
@@ -94,14 +94,21 @@ pagination.pagerSize = 5
       logoHomeLink = "/"
 
     [languages.en.menu]
-      # Submenus is available since v2.1.0
-      # [[languages.en.menu.main]]
-      #   identifier = "submenuParent"
-      #   name = "Submenu"
-      # [[languages.en.menu.main]]
-      #   parent = "submenuParent"
-      #   identifier = "anItem"
-      #   name = "AnItem"
+      # Hardcoded while I learn Hugo
+      [[languages.en.menu.main]]
+        identifier = "tagsSubmenu"
+        name = "Tags"
+      [[languages.en.menu.main]]
+        parent = "tagsSubmenu"
+        identifier = "engine_development"
+        name = "Engine Development"
+        url = "/tags/engine_development"
+      [[languages.en.menu.main]]
+        parent = "tagsSubmenu"
+        identifier = "projects"
+        name = "Engine Development"
+        url = "/tags/projects"
+
       [[languages.en.menu.main]]
         identifier = "about"
         name = "About"

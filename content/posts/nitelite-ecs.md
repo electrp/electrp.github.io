@@ -2,6 +2,7 @@
 title = "Nitelite ECS"
 date = "2024-12-15"
 hideComments=true
+tags = ["engine_development", "projects"]
 +++
 
 I recently had the pleasure of joining a new team as a part of the DigiPen project courses, where we all worked together to develop a game engine. Me and another (Travis) had taken on the responsibility of the "Core Engine" development, so I have spent much of my time over the past semester working on implementing the best tools I can. 

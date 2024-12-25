@@ -106,7 +106,7 @@ pagination.pagerSize = 5
       [[languages.en.menu.main]]
         parent = "tagsSubmenu"
         identifier = "projects"
-        name = "Engine Development"
+        name = "Projects"
         url = "/tags/projects"
 
       [[languages.en.menu.main]]

@@ -78,6 +78,10 @@
 
   &-content {
     margin-top: 30px;
+    
+    & a {
+      color: var(--article-link-color);
+    }
   }
 
   &-cover {
@@ -86,7 +90,7 @@
     margin: 40px 0;
     padding: 20px;
 
-    @media (var(--phone)) {
+    @media (max-width: $phone) {
       padding: 10px;
       border-width: 10px;
     }

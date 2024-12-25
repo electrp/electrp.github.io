@@ -44,15 +44,15 @@ pagination.pagerSize = 5
   # oneHeadingSize = true # default
 
   # whether to show a page's estimated reading time
-  # readingTime = false # default
+  readingTime = true # default
 
   # whether to show a table of contents
   # can be overridden in a page's front-matter
-  # Toc = false # default
+  Toc = true # default
 
   # set title for the table of contents
   # can be overridden in a page's front-matter
-  # TocTitle = "Table of Contents" # default
+  TocTitle = "Table of Contents" # default
 
 
   # you can set a banner on the top of the page with a call to action
@@ -115,6 +115,6 @@ pagination.pagerSize = 5
   # In case you would like to make changes to the theme and keep it locally in you repository,
   # uncomment the line below (and correct the local path if necessary).
   # --
-  # replacements = "github.com/mirus-ua/hugo-theme-re-terminal -> themes/re-terminal"
-[[module.imports]]
-  path = 'github.com/mirus-ua/hugo-theme-re-terminal'
+  replacements = "github.com/mirus-ua/hugo-theme-re-terminal -> re-terminal"
+# [[module.imports]]
+  # path = 'github.com/mirus-ua/hugo-theme-re-terminal'

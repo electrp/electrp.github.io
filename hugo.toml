@@ -108,6 +108,11 @@ pagination.pagerSize = 5
         identifier = "projects"
         name = "Projects"
         url = "/tags/projects"
+      [[languages.en.menu.main]]
+        parent = "tagsSubmenu"
+        identifier = "digipen"
+        name = "Digipen"
+        url = "/tags/digipen"
 
       [[languages.en.menu.main]]
         identifier = "about"

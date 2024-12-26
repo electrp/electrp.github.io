@@ -13,20 +13,6 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "About/index.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "index"
-            }
-          },
-          {
-            "id": "c7d8bab983aa6975",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "posts/slotmap.md",
                 "mode": "source",
                 "source": false
@@ -35,8 +21,7 @@
               "title": "slotmap"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "About/index.md",
+                "file": "posts/slotmap.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for slotmap"
             }
           },
           {
@@ -127,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "About/index.md",
+                "file": "posts/slotmap.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from slotmap"
             }
           },
           {
@@ -142,7 +127,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -154,18 +139,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "About/index.md"
+                "file": "posts/slotmap.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of slotmap"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,10 +161,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c7d8bab983aa6975",
+  "active": "c9f46aeef58f2392",
   "lastOpenFiles": [
-    "posts/Untitled.md",
     "About/index.md",
+    "posts/slotmap.md",
+    "posts/Untitled.md",
     "About/blue.png",
     "posts/nitelite-archetypes.md",
     "posts/nitelite-ecs.md",

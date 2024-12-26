@@ -84,7 +84,7 @@ struct EntityData
 std::vector<EntityData> data;
 ```
 
-This generational index pattern is also known as a [Slotmap](https://docs.rs/slotmap/latest/slotmap/), and can be implemented very simply with the use of an existing slotmap implementation.  When entities are removed/added/modified, the archetype index may be changed to reflect the difference.
+This generational index pattern is also known as a [Slotmap](slotmap), and can be implemented very simply with the use of an existing slotmap implementation.  When entities are removed/added/modified, the archetype index may be changed to reflect the difference.
 
 Entity -> Archetype Entity -> Archetype -> Table -> Components
 

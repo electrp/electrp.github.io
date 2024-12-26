@@ -2,7 +2,7 @@
 title = "Nitelite Archetypes"
 date = "2024-12-16"
 hideComments=true
-tags = ["engine_development", "projects", "digipen"]
+tags = ["engine_development", "projects", "digipen", "data"]
 +++ 
 
 ECS is defined in two ways:

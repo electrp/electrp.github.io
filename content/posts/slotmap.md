@@ -2,7 +2,7 @@
 title = "Slotmap: The budget allocator you probably should use"
 date = "2024-12-26"
 hideComments=true
-tags = ["projects"]
+tags = ["data", "engine_development"]
 +++
 
 Slotmaps are known by quite a few names, including stable vector (not to be confused with boost::stable_vector), slab, idvec, generational indices... far too many to list here. It's usefulness cannot be understated, and many other data structures can be implemented extremely efficiently when relying on this pattern. The most popular implementation I have found of this structure is the rust crate [slotmap](https://docs.rs/slotmap/latest/slotmap/), with most of the implementations that I can find being rust based.

@@ -3,6 +3,7 @@ title = "Slotmap: The budget allocator you probably should use"
 date = "2024-12-16"
 hideComments=true
 tags = ["engine_development", "projects", "digipen"]
+draft = true
 +++
 
 I was made aware of this data structure a while ago when I was developing the engine for my DigiPen GAM200-250 project. It's brought up a lot in ECS contexts, for the simple reason that it *is* it's own (very limited) ECS storage implementation! While I am stretching the definition of ECS by a lot, a Slotmap perfectly solves entity providing all on its own. 

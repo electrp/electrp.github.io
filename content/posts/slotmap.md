@@ -2,7 +2,7 @@
 title = "Slotmap: The budget allocator you probably should use"
 date = "2024-12-16"
 hideComments=true
-tags = ["engine_development", "projects", "digipen"]
+tags = ["projects", "digipen"]
 draft = true
 +++
 
@@ -19,7 +19,7 @@ Slotmap<Node> nodes;
 
 void user()
 {
-	// Insert a value into the slotmap, and store the resulting key/index. This is what you use to access the data.
+	// Insert a value into the slotmap, and store the resulting key
 	auto key = nodes.insert(Node{0});
 
 	// Retrieve the value
@@ -33,7 +33,8 @@ void user()
 }
 ```
 
-Slotmaps tend to function very similar to allocators, with the added restriction of requiring 
+Slotmaps tend to function very similar to allocators, with the added restriction of requiring ,
+
 ## Internals
 
 Slotmap is simply a vector with a few extra features. In fact, it's almost disgustingly simple to implement just with a simple std::vector. 

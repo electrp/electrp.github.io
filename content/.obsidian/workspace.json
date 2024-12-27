@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/slotmap.md",
+                "file": "Showcase/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "slotmap"
+              "title": "index"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/slotmap.md",
+                "file": "Showcase/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for slotmap"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -163,14 +163,14 @@
   },
   "active": "c9f46aeef58f2392",
   "lastOpenFiles": [
-    "About/index.md",
+    "Showcase/dine_n_bash_rendering.gif",
+    "Showcase/index.md",
     "posts/slotmap.md",
+    "About/index.md",
     "posts/Untitled.md",
     "About/blue.png",
     "posts/nitelite-archetypes.md",
     "posts/nitelite-ecs.md",
-    "Showcase/index.md",
-    "Showcase/dine_n_bash_rendering.gif",
     "Showcase/dine_n_bash_editor.png",
     "Showcase/dine_n_bash_gameplay.png",
     "Untitled 1",

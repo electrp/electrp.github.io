@@ -118,7 +118,12 @@ public:
 
 There are some issues that can come up with implementations like this:
 - This design can be somewhat susceptible to memory leakage. Due to how generations are stored, it may not be possible to trim space off of the end. If a generation is removed, there is no way to find what it's value was previously. If the slot storage is expanded to where a generation was removed and readded, it will start at a previously used generation. This breaks the stable index guarantee.
-- More of a fun theoretical problem: If too many values are added and removed, there is a chance that the generation counter rolls over. The two options would be to crash or allow keys to point to invalid values. Fortunately, it is incredibly unlikely to ever see a case where a rollover will matter. Storing enough 32 bit keys to guarantee a collision would take about 32 gigabytes, or 4 billion iterations (producing 4 billion errors) of testing the same invalid key.
+- More of a fun theoretical problem: If too many values are added and removed, there is a chance that the generation counter rolls over. The two options would be to crash or allow keys to point to invalid values. Fortunately, it is incredibly unlikely to ever see a case where a rollover will matter. Storing enough 32 bit keys to guarantee a collision would take about 32 gigabytes, or 4 billion iterations (producing 4 billion errors) of testing and regenerating the same invalid key.
+
+### Iteration 
+
+Algorithmically, this implementation would have a slow iteration speed compared to allocated pointers. The required iterations isn't the number of currently stored values, but the maximum number of values ever stored in the structure. Depending on your usage, this could be just fine or even better. As the memory is guaranteed to be contiguous, you can spend much less time waiting for memory retrieval. For even better iteration performance, you could:
+- Tracking the location of the last valid slot would allow you to only iterate until the end of all valid data. Preferring to insert new values at the front can improve this as well, which could be done simply with a priority queue.
  
 ## Example Uses
 

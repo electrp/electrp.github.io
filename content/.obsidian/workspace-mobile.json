@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "About/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -149,6 +149,7 @@
   },
   "active": "d3c993890a05cf30",
   "lastOpenFiles": [
+    "About/blue.png",
     "Showcase/index.md",
     "index.md",
     "posts/slotmap.md",

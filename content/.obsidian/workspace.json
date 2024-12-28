@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Showcase/index.md",
+                "file": "posts/i-hate-ecs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "i-hate-ecs"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Showcase/index.md",
+                "file": "posts/i-hate-ecs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for i-hate-ecs"
             }
           },
           {
@@ -163,8 +163,11 @@
   },
   "active": "c9f46aeef58f2392",
   "lastOpenFiles": [
-    "Showcase/dine_n_bash_rendering.gif",
     "Showcase/index.md",
+    "posts/nitelite-audio.md",
+    "posts/i-hate-ecs.md",
+    "().md",
+    "Showcase/dine_n_bash_rendering.gif",
     "posts/slotmap.md",
     "About/index.md",
     "posts/Untitled.md",

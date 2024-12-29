@@ -6,7 +6,9 @@ tags = ["engine_development", "projects", "digipen"]
 draft = true
 +++
 
-I was eating brunch with some family recently, and my mom was talking about a bird feeder she had gotten my dad for Christmas. It's really nice looking, but it's special feature is a camera that can detect bird species, and send its information to your phone. In her description though, I heard a phrase that made my blood boil 
+*I will be using the terms AI and machine-learning interchangeably through this page. If there's anyone you should blame for this, blame the people who keep shoving the term AI down my gullet. I didn't know what machine learning was before "AI" came along.*
+
+I was eating brunch with some family recently, and my mom was talking about a bird feeder she had gotten my dad for Christmas. It's really nice looking, but it's special feature is a camera that can detect bird species, and send its information to your phone. In her description though, I heard a phrase that made my blood boil.
 
 # "... It has ai that can..."
 
@@ -32,7 +34,7 @@ You can take a jackhammer to the wall of human speech, but something like arithm
 
 Ray-traced denoising might be one of the best examples I can find. I took a class recently where the professor said, almost verbatim, "It might seem really simple, but the result is like magic." That's a phrase I've definitely heard variations of, and very often around AI.
 
-Ray-tracing is a way of 3d rendering, where you "trace rays" from your camera to objects in the scene, using how it bounces to calculate the light of objects you are looking at. It's tech used in practically all animated movies to provide an accurate simulation of almost exactly how light works. Unfortunately, its reeeally slow. Render farms will sit for hours on a single frame, calculating as many light rays as possible. Now, what if we wanted to do this in realtime?
+Ray-tracing is a way of 3d rendering, where you "trace rays" from your camera to objects in the scene, using how it bounces to calculate the light of objects you are looking at. It's tech used in practically all animated movies to provide an accurate simulation of almost exactly how light works. Unfortunately, its reeeally slow. Render farms will sit for hours on a single frame, calculating as many light rays as possible. Now, what if we wanted to do this in real-time?
 
 In our implementation, we restricted ourselves to one ray per pixel per frame. This means that each pixel has a single attempt to find a light in a given frame. If your ray doesn't hit a light, that pixel is black for that frame. Obviously, that looks pretty bad. 
 
@@ -43,3 +45,14 @@ This image took basically all of my GPU power to produce at a reasonable frame r
 
 The solution to removing noise is obviously: denoising. 
 
+There are quite a few ways that people have attempted denoising, often a multi step process. Some solutions have denoising taking place while rendering occurs, such as [ReSTIR](https://interplayoflight.wordpress.com/2023/12/17/a-gentler-introduction-to-restir/). Other solutions take place after rendering has completed, such as the à trous algorithm or [Nividia's ReLAX](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s32759/). These solutions are engineered to produce great looking images, and have been used in countless products.
+
+As this is a document talking about AI, obviously I need to talk about the attempts done for AI denoising. To be clear, I don't want to discredit any work done by the people who made the things, they are much smarter and much more experienced than I am. But, I still do believe that AI solutions to these kinds of problems tend to avoid the solutions that provide the best and most efficient results. I will go into detail on what I mean a little bit later.
+
+At face value, these solutions seem to be a great match for machine learning models, and they are! AI brings complex logic that would be often difficult to program through pre-computed training. [In fact, it does a great job.](https://jannovak.info/publications/NCV/index.html) Even by their own admission though, it is slow and computationally expensive. The pass through the model will take more time than an efficient human-designed algorithm. I have no problem with this solution, but it does help outline where things go wrong. 
+
+## What's wrong with a good looking solution?
+
+In short, it skips steps. 
+
+Applications like this are well known 

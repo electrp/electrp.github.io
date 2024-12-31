@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/it-has-ai.md",
+                "file": "posts/ecs-static-types.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "it-has-ai"
+              "title": "ecs-static-types"
             }
           }
         ]
@@ -95,7 +95,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "posts/it-has-ai.md",
+            "file": "posts/ecs-static-types.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -149,15 +149,15 @@
   },
   "active": "d3c993890a05cf30",
   "lastOpenFiles": [
-    "posts/i-hate-ecs.md",
+    "About/index.md",
     "posts/it-has-ai.md",
+    "posts/ecs-static-types.md",
     "().md",
     "posts/nitelite-audio.md",
     "Untitled.md",
     "posts/nitelite-archetypes.md",
     "posts/nitelite-ecs.md",
     "posts/slotmap.md",
-    "About/index.md",
     "About/blue.png",
     "Showcase/index.md",
     "index.md",

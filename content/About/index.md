@@ -17,6 +17,7 @@ Things that ~~I think~~ I know what I'm talking about in:
 Reach me on discord @electrp.
 
 [Add me on LinkedIn](https://www.linkedin.com/in/will-bender) *in/will-bender*
+
 [Check out my github!](https://github.com/electrp) *electrp*
 
 Favorite Music

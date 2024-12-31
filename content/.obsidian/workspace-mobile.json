@@ -11,12 +11,14 @@
             "id": "d3c993890a05cf30",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "About/blue.png"
+                "file": "About/index.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "blue"
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
         ]
@@ -93,7 +95,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "About/blue.png",
+            "file": "About/index.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -147,6 +149,7 @@
   },
   "active": "d3c993890a05cf30",
   "lastOpenFiles": [
+    "Showcase/dine_n_bash_editor.png",
     "About/index.md",
     "About/blue.png",
     "posts/ecs-static-types.md",

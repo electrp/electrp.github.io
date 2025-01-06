@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "About/index.md",
+                "file": "Showcase/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -165,6 +165,7 @@
   },
   "active": "c9f46aeef58f2392",
   "lastOpenFiles": [
+    "About/index.md",
     "posts/ecs-static-types.md",
     "posts/nitelite-audio.md",
     "posts/slotmap.md",
@@ -174,7 +175,6 @@
     "Showcase/index.md",
     "().md",
     "Showcase/dine_n_bash_rendering.gif",
-    "About/index.md",
     "posts/Untitled.md",
     "About/blue.png",
     "posts/nitelite-archetypes.md",

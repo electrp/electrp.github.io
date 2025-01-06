@@ -11,3 +11,4 @@ _Game 200-250, DigiPen_
 Real-Time Ray-Tracer
 {{< youtube X98CnjahI0A >}}
 *CS 398, Vulkan and Real Time Ray Tracing, DigiPen*
+- Uses ray-accumulation and A Trous denoising

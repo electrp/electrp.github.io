@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/it-has-ai/index.md",
+                "file": "About/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/it-has-ai/index.md",
+                "file": "posts/nitelite-audio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for nitelite-audio"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/slotmap.md",
+                "file": "posts/nitelite-audio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from slotmap"
+              "title": "Outgoing links from nitelite-audio"
             }
           },
           {
@@ -145,11 +145,13 @@
               "title": "Outline of slotmap"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -163,14 +165,15 @@
   },
   "active": "c9f46aeef58f2392",
   "lastOpenFiles": [
+    "posts/ecs-static-types.md",
+    "posts/nitelite-audio.md",
+    "posts/slotmap.md",
+    "posts/it-has-ai/index.md",
     "posts/it-has-ai",
     "posts/i-hate-ecs.md",
-    "posts/it-has-ai/index.md",
-    "posts/nitelite-audio.md",
     "Showcase/index.md",
     "().md",
     "Showcase/dine_n_bash_rendering.gif",
-    "posts/slotmap.md",
     "About/index.md",
     "posts/Untitled.md",
     "About/blue.png",

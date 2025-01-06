@@ -47,3 +47,8 @@ body {
         margin-top: 0px !important;
     }
 } 
+
+.content {
+    max-width: 1556px;
+}
+

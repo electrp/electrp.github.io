@@ -141,3 +141,6 @@ pagination.pagerSize = 6
   replacements = "github.com/mirus-ua/hugo-theme-re-terminal -> re-terminal"
 # [[module.imports]]
   # path = 'github.com/mirus-ua/hugo-theme-re-terminal'
+
+[security]
+  enableInlineShortcodes = true

@@ -670,7 +670,7 @@ namespace NLE
         if (mFreeList != SIZE_MAX)
         {
             size_t next = mNodes[mFreeList].uNextFree;
-            mNodes[mFreeList].uData = std::move(data);
+            new (&mNodes[mFreeList].uData) Value{std::move(data)};
             Key key(mNodes[mFreeList].mGeneration, static_cast<unsigned>(mFreeList));
             mNodes[mFreeList].mHasData = true;
             mFreeList = next;

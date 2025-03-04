@@ -560,6 +560,9 @@ typename SlotMap<Value, GenerationType, IndexType>::iterator& SlotMap<
 
     mIndex++;
 
+    if (mIndex >= mPtr->mNodes.size())
+        return *this;
+
     while (!mPtr->mNodes[mIndex].mHasData)
     {
         if (mIndex >= mPtr->mNodes.size())
@@ -626,6 +629,9 @@ typename SlotMap<Value, GenerationType, IndexType>::iterator& SlotMap<
     }
 
     mIndex++;
+
+    if (mIndex >= mPtr->mNodes.size())
+        return *this;
 
     while (!mPtr->mNodes[mIndex].has_data)
     {

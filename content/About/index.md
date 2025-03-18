@@ -16,9 +16,9 @@ Things that ~~I think~~ I know what I'm talking about in:
     
 Reach me on discord @electrp.
 
-[Add me on LinkedIn](https://www.linkedin.com/in/will-bender) *in/will-bender*
+[Add me on LinkedIn `in/will-bender`](https://www.linkedin.com/in/will-bender) 
 
-[Check out my github!](https://github.com/electrp) *electrp*
+[Check out my github! `electrp`](https://github.com/electrp)
 
 Favorite Music
 - A New Sound - Geordie Greep

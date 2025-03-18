@@ -5,9 +5,14 @@ hideComments=true
 tags = ["data", "engine_development"]
 +++
 
-Slotmaps are known by quite a few names, including stable vector (not to be confused with boost::stable_vector), slab, idvec, generational indices... far too many to list here. It's usefulness cannot be understated, and many other data structures can be implemented extremely efficiently when relying on this pattern. The most popular implementation I have found of this structure is the rust crate [slotmap](https://docs.rs/slotmap/latest/slotmap/), with most of the implementations that I can find being rust based.
+The slotmap data structure is known by quite a few names, including stable vector (not to be confused with boost::stable_vector), slab, idvec, generational indices... far too many to list here. It's usefulness cannot be understated, and many other data structures can be implemented extremely efficiently when relying on this pattern. The most popular implementation I have found of this structure is the rust crate [slotmap](https://docs.rs/slotmap/latest/slotmap/), with most of the implementations that I can find being rust based.
 
 ## What does it do?
+
+A slotmap has 3 primary operations:
+- `Insert`, taking a data parameter and returning a unique and *stable* key. 
+- `Erase`, taking an existing stable key and removing it's corresponding data.
+- `Get`, taking an existing stable key and returning it's data.
 
 A small example of a generic (c++) example:
 
@@ -46,11 +51,11 @@ Insertion assigns a value to a "slot", and returns a unique key specific to that
 
 There are only a few pieces to understand how a slotmap works:
 - Store data: 
-	- This can be very easily achieved with a vector type, such as std::vector. 
+	- This can be very easily achieved with any vector type, such as std::vector. 
 - Assigning new values:
-	- Using a free-list, we can keep track of free values. Doing so would require us to store those next-free values alongside as a part of the slot, which can be done using unions. 
+	- Using a free-list, we can keep track of free values. Doing so would require us to store those next-free values as a part of an empty slot. 
 - Differentiating similarly indexed values: 
-	- A pattern for this is generally known as generational indices. A key type will generally store two things, a index and a generation. If the generation of the key matches the generation stored at the location checked, the index contains the value matching the index. When erased, just increment the generation of the slot, thus invalidating all keys with a matching generation.
+	- The pattern for this is generally known as generational indices. A key type will generally store two things, a index and a generation. If the generation of the key matches the generation stored at the location checked, the index contains the value matching the index. When erased, just increment the generation of the slot, thus invalidating all keys with a matching generation.
 - Testing validity of values:
 	- This one is somewhat optional. If you plan to iterate through the slotmap, then you will need a way to test to see if the generation at the slot is valid. This is easy to implement with something like std::optional, or testing for a bit within the generation of a slot.
 
@@ -89,7 +94,7 @@ public:
 		}
 		uint32_t idx = firstFree;
 		firstFree = slots[idx].nextFreeIndex;
-		// Placement new
+		// Placement new, calls the object constructor on valid memory
 		new (&slots[idx].data]) T(std::forward(data)); 
 		return { slots[idx].generation, idx };
 	}
@@ -122,8 +127,10 @@ There are some issues that can come up with implementations like this:
 
 ### Iteration 
 
-Algorithmically, this implementation would have a slow iteration speed compared to allocated pointers. The required iterations isn't the number of currently stored values, but the maximum number of values ever stored in the structure. Depending on your usage, this could be just fine or even better. As the memory is guaranteed to be contiguous, you can spend much less time waiting for memory retrieval. For even better iteration performance, you could:
+Algorithmically, this implementation would have a slow iteration speed compared to allocated pointers. The required iterations isn't the number of currently stored values, but the maximum number of values ever stored in the structure. Depending on your usage, this could be just fine or even better as memory within the slotmap is contiguous. For even better iteration performance, you could:
 - Tracking the location of the last valid slot would allow you to only iterate until the end of all valid data. Preferring to insert new values at the front can improve this as well, which could be done simply with a priority queue.
+- Caching information about the next valid key within a slot would eliminate much of the checking between objects, especially if this logic could be done branchless.
+- Use a Sparse Set! These aren't exactly slotmaps, but often are used to store a set of objects specifically for fast insertion, with similar index guarantees.
  
 ## Example Uses
 
@@ -153,3 +160,4 @@ struct BST {
 ```
 
 Instead of relying on dynamically allocated nodes, all nodes are stored sequentially within the slotmap. 
+

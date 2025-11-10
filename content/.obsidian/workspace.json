@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "beb995f164ca07c1",
+        "id": "8945b7089f35f2bc",
         "type": "tabs",
         "children": [
           {
-            "id": "c9f46aeef58f2392",
+            "id": "bde852a187d8bc39",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Showcase/index.md",
+                "file": "posts/ecs-static-types.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "ecs-static-types"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -52,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tags",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -155,6 +156,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -163,23 +165,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c9f46aeef58f2392",
+  "active": "8b34ba42269e400a",
   "lastOpenFiles": [
-    "About/index.md",
+    "posts/shuttlefall-tools/Screenshot 2025-09-21 164229.png",
+    "posts/shuttlefall-tools/index.md",
     "posts/ecs-static-types.md",
-    "posts/nitelite-audio.md",
+    "posts/i-hate-ecs.md",
+    "posts/hello-gdc.md",
+    "posts/shuttlefall-tools/Screenshot 2025-10-23 135510.png",
+    "Showcase/index.md",
+    "posts/shuttlefall-tools",
     "posts/slotmap.md",
+    "Showcase/dine_n_bash_editor.png",
+    "About/index.md",
+    "posts/nitelite-audio.md",
     "posts/it-has-ai/index.md",
     "posts/it-has-ai",
-    "posts/i-hate-ecs.md",
-    "Showcase/index.md",
     "().md",
     "Showcase/dine_n_bash_rendering.gif",
-    "posts/Untitled.md",
     "About/blue.png",
     "posts/nitelite-archetypes.md",
     "posts/nitelite-ecs.md",
-    "Showcase/dine_n_bash_editor.png",
     "Showcase/dine_n_bash_gameplay.png",
     "Untitled 1",
     "Showcase"

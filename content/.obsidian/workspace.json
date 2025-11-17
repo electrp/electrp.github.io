@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/ecs-static-types.md",
+                "file": "posts/slotmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ecs-static-types"
+              "title": "slotmap"
             }
           }
         ]
@@ -165,27 +165,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8b34ba42269e400a",
+  "active": "bde852a187d8bc39",
   "lastOpenFiles": [
-    "posts/shuttlefall-tools/Screenshot 2025-09-21 164229.png",
+    "posts/nitelite-ecs.md",
+    "posts/nitelite-audio.md",
+    "posts/nitelite-archetypes.md",
     "posts/shuttlefall-tools/index.md",
     "posts/ecs-static-types.md",
-    "posts/i-hate-ecs.md",
-    "posts/hello-gdc.md",
     "posts/shuttlefall-tools/Screenshot 2025-10-23 135510.png",
+    "posts/hello-gdc.md",
+    "posts/shuttlefall-tools/Screenshot 2025-09-21 164229.png",
+    "posts/i-hate-ecs.md",
     "Showcase/index.md",
     "posts/shuttlefall-tools",
     "posts/slotmap.md",
     "Showcase/dine_n_bash_editor.png",
     "About/index.md",
-    "posts/nitelite-audio.md",
     "posts/it-has-ai/index.md",
     "posts/it-has-ai",
     "().md",
     "Showcase/dine_n_bash_rendering.gif",
     "About/blue.png",
-    "posts/nitelite-archetypes.md",
-    "posts/nitelite-ecs.md",
     "Showcase/dine_n_bash_gameplay.png",
     "Untitled 1",
     "Showcase"

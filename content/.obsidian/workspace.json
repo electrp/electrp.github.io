@@ -13,15 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/slotmap.md",
+                "file": "posts/CMake.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "slotmap"
+              "title": "CMake"
+            }
+          },
+          {
+            "id": "120b30974b3d07e8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,20 +178,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bde852a187d8bc39",
+  "active": "120b30974b3d07e8",
   "lastOpenFiles": [
+    "apps/graphing/index.html",
+    "apps/graphing/graphing.wasm",
+    "apps/graphing/graphing.js",
+    "apps/graphing/graphing.html",
+    "apps/graphing",
+    "apps/New folder",
+    "apps",
+    "posts/ecs-static-types.md",
+    "posts/CMake.md",
+    "posts/shuttlefall-tools/index.md",
+    "posts/hello-gdc.md",
+    "posts/slotmap.md",
     "posts/nitelite-ecs.md",
     "posts/nitelite-audio.md",
     "posts/nitelite-archetypes.md",
-    "posts/shuttlefall-tools/index.md",
-    "posts/ecs-static-types.md",
     "posts/shuttlefall-tools/Screenshot 2025-10-23 135510.png",
-    "posts/hello-gdc.md",
     "posts/shuttlefall-tools/Screenshot 2025-09-21 164229.png",
     "posts/i-hate-ecs.md",
     "Showcase/index.md",
     "posts/shuttlefall-tools",
-    "posts/slotmap.md",
     "Showcase/dine_n_bash_editor.png",
     "About/index.md",
     "posts/it-has-ai/index.md",

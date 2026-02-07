@@ -180,9 +180,9 @@
   },
   "active": "120b30974b3d07e8",
   "lastOpenFiles": [
-    "apps/graphing/index.html",
-    "apps/graphing/graphing.wasm",
     "apps/graphing/graphing.js",
+    "apps/graphing/graphing.wasm",
+    "apps/graphing/index.html",
     "apps/graphing/graphing.html",
     "apps/graphing",
     "apps/New folder",

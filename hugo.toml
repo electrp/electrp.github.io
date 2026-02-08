@@ -14,7 +14,7 @@ pagination.pagerSize = 6
   themeColor = "pink"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 4
+  showMenuItems = 5
 
   # show selector to switch language
   showLanguageSelector = false
@@ -75,7 +75,7 @@ pagination.pagerSize = 6
   [languages.en.params]
     languageName = "English"
     title = "electrp"
-    subtitle = ":3"
+    subtitle = ""
     owner = ""
     keywords = ""
     copyright = ""
@@ -120,17 +120,30 @@ pagination.pagerSize = 6
         url = "/tags/data"
 
       [[languages.en.menu.main]]
+        identifier = "apps"
+        name = "Apps"
+        weight = 20
+      [[languages.en.menu.main]]
+        parent = "apps"
+        identifier = "graphing"
+        name = "MAT 300 Graphing Projects"
+        url = "/apps/graphing"
+
+      [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
         url = "/about"
+        weight = 1
       [[languages.en.menu.main]]
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
+        weight = 3
       [[languages.en.menu.main]]
         identifier = "resume"
         name = "Resume"
         url = "/resume.pdf"
+        weight = 2
 
 
 

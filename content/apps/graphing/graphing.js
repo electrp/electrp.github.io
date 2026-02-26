@@ -9164,6 +9164,17 @@ async function createWasm() {
       return win.shouldClose;
     };
 
+  function _random_get(buffer, size) {
+  try {
+  
+      randomFill(HEAPU8.subarray(buffer, buffer + size));
+      return 0;
+    } catch (e) {
+    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e;
+    return e.errno;
+  }
+  }
+
   var _wgpuAdapterGetInfo = (adapterPtr, info) => {
       var adapter = WebGPU.getJsObject(adapterPtr);
       WebGPU.fillAdapterInfoStruct(adapter.info, info);
@@ -11034,6 +11045,8 @@ var wasmImports = {
   glfwWindowHint: _glfwWindowHint,
   /** @export */
   glfwWindowShouldClose: _glfwWindowShouldClose,
+  /** @export */
+  random_get: _random_get,
   /** @export */
   wgpuAdapterGetInfo: _wgpuAdapterGetInfo,
   /** @export */
